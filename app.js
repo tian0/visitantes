@@ -8,13 +8,17 @@ let app = express() //crear config de express para app
 app.use(bodyParser.json())
 
 //Config main rout to server
-app.get("/", (req,res)=>{
-    res.send("respuesta desde /")
-})
+// app.get("/", (req,res)=>{
+//     res.send("respuesta desde /")
+// })
 
 //Config routes for user management
-app.use("/visitors", visitorRouter) //GET is declared in router
-app.use("/visitors/create", visitorRouter) //POST is declared in router
+app.use("/", visitorRouter) //GET is declared in router
+app.get("/", visitorRouter) //GET is declared in router
+
+app.post("/", visitorRouter) //GET is declared in router
+
+// app.use("/visitors/create", visitorRouter) //POST is declared in router
 // app.use("/users/delete", userRouter) //DELETE is declared in router
 // app.use("/users/update", userRouter) //UPDATE is declared in router
 
