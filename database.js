@@ -1,6 +1,7 @@
 let mongoose = require("mongoose")
 // const CONFIG = require("../config/config") //would need to use CONFIG.DB_CONNECTION to access the module exports object
 const { DB_CONNECTION } = require("../visitantes/config")
+const {PORT} = require("../visitantes/config")
 let connectionString = "mongodb://localhost:27017/visitantes" //mongodb://user:pwd@localhost...
 
 
@@ -15,7 +16,7 @@ module.exports = {
         if (this.connection)
             return this.connection
 
-            mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/mongo-1', { useNewUrlParser: true }) //opens connection to DB, was mongoose.connect(CONFIG.DB_CONNECTION), see line 2
+            mongoose.connect(process.env.PORT || 'mongodb://localhost:27017/mongo-1', { useNewUrlParser: true }) //opens connection to DB, was mongoose.connect(CONFIG.DB_CONNECTION), see line 2
             .then((connection) => {
                 console.log("CONNECTION TO DB");
             })
