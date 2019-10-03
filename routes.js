@@ -5,7 +5,7 @@ let visitorRouter = express.Router()
 
 visitorRouter
     // .get('/', userCtr.getAllUsers)
-    .get('/', userCtr.getAllUsers)
-    .post('/', userCtr.createUsers) //executes find middleware first to validate user can be created, next is createUsers
+    // .get('/', userCtr.getAllUsers)
+    .get('/', userCtr.createUsers) //executes find middleware first to validate user can be created, next is createUsers
 
 module.exports = visitorRouter

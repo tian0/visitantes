@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 // })
 
 //Config routes for user management
-app.use("/", visitorRouter) //GET is declared in router
+// app.use("/", visitorRouter) //GET is declared in router
 app.get("/", visitorRouter) //GET is declared in router
 
 app.post("/", visitorRouter) //GET is declared in router
