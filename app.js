@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 // app.use("/", visitorRouter) //GET is declared in router
 app.get("/", visitorRouter) //GET is declared in router
 
-app.post("/", visitorRouter) //GET is declared in router
+// app.post("/", visitorRouter) //GET is declared in router
 
 // app.use("/visitors/create", visitorRouter) //POST is declared in router
 // app.use("/users/delete", userRouter) //DELETE is declared in router

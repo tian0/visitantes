@@ -26,19 +26,15 @@ const getAllUsers = async (req, res) => {
 
 const createUsers = async (req, res) => {
     //DB is already open from first middleware find()
-    // console.log("createUser", req.body);
     DB.connect()
     let newVisitor = new Visitor(req.body)
     await newVisitor.save()
         .then((response) => {
-            // console.log("createUsers response", response);
             res.status(201).send(`<h1>El visitante fue creado con exito</h1>`) //printing json format
-            // res.status(201).send(`<h1>Mensaje Correcto</h1>`)
 
         })
         .catch((error) => {
             console.log("error", error.message);
-            // res.status(404).send({ "error": error.message , "status": 404}) //printing json format
             res.status(404).send(`<h1>Error: ` + error.message + `</h1>`)
         })
 
