@@ -6,7 +6,8 @@ let Schema = mongoose.Schema //Schema is a DB
 let Visitor = new Schema({
     _id: {
         type: Number,
-        required: false
+        required: false,
+        default: 100
     },
     date: {
         type: Date,
